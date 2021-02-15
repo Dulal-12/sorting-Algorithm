@@ -1,21 +1,18 @@
-const bubble = (arr) =>{
+const bubble = (array) =>{
 
-    const len = arr.length;
+    const len = array.length ;
+    
+    //this two loop working well
+    for(let i = 0 ; i < len ;i++){
+        for(let j  = 0 ; j < len - 1 - i; j++){
+            if(array[j+1] < array[j]){
+                [array[j] , array[j+1]] = [array[j+1] , array[j] ];
+            }
+        }
+    }
 
-    for(let i = 0 ; i < len ; i++){
-
-                       for(let j = 0 ; j < len - 1 - i ; j++){
-
-                                          if(arr[j+1] < arr[j]){
-                                                       
-                                                      [arr[j] , arr[j+1]] = [arr[j+1] , arr[j]];
-                                          }
-                       }
-
-  }
-
-  return arr;
+    console.log(array);
 }
 
-const result = bubble([7,5,4,3,2,2]);
-console.log(result);
+
+bubble([2,1,4,1,3,3,2,1,])

@@ -1,24 +1,24 @@
-const selection = (arr) =>{
+const selectionSort = (array)=>{
+    //find array length
+    const len = array.length;
+    
 
-    const len = arr.length;
+    for(let i = 0; i < len ; i++){
 
-    for(let i = 0 ; i < len ; i++){
+        //take minValue
+        let minValueIndex = i;
 
-                      let minValueIndex = i ; 
-
-                        for(let j  = i+1 ; j < len ; j++){
-
-                                    if(arr[j] < arr[minValueIndex]){
-                                        minValueIndex = j;
-                                    }
+        for(let j = i+1 ; j < len ;j++){
+            if(array[j] < array[minValueIndex]){
+                minValueIndex = j;
+            }
         }
 
-        [arr[i] , arr[minValueIndex]] = [arr[minValueIndex] , arr[i]];
-
+        [array[i] , array[minValueIndex]] = [array[minValueIndex] , array[i]];
     }
 
-    return arr;
+    console.log(array);
+
 }
 
-const result = selection([45,43,2,1,1]);
-console.log(result);
+selectionSort([1,2,3,6,74,3,2,0,1,-1])
